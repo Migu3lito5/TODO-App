@@ -7,10 +7,10 @@ let todoList = [
 ]
 
 // adds the todo to the array and starts the displayTodo function
-const addTodo = (todo) => {
+const addTodo = (todo,urgency) => {
 
-   todoList.push({todoDesc: todo, priority: 'still working on it'})
-   console.log(todoList)
+   todoList.push({todoDesc: todo, priority: urgency})
+
    displayTodos()
    
 }
@@ -40,8 +40,12 @@ const displayTodos = () => {
 
 //grabs the values and if not empty, sends them over to the addTodo function
 const grabInput = () => {
+
    let inputValue = document.getElementById('todo-input').value
-   addTodo(inputValue)
+   let urgentType = document.getElementById('urgency')
+   let urgentValue = urgentType.options[urgentType.selectedIndex].text;
+
+   addTodo(inputValue, urgentValue);
 }
 
 displayTodos()
