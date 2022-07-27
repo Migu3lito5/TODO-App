@@ -20,7 +20,11 @@
     <div class="input-container">
       
       <input id="todo-input" class="inputs" type="text" placeholder="Todo Name">
-      <input class="inputs" type="text" placeholder="Todo Urgency">
+      <select id="urgency" class="urgency">
+        <option value="1">Urgent</option>
+        <option value="2">Ehhh</option>
+        <option value="3">Tomorrow</option>
+      </select>
       <input id="input-button" class="input-button" type="button" value="Add Todo"
        onclick="grabInput()">
       
