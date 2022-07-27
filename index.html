@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> Todo App </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/general.css">
+    <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="styles/inputs.css">
+  </head>
+
+  <body>
+    <div class="header">
+      <div class="header-mid">
+        <h2>| TODOS |</h2>
+      </div>
+    </div>
+
+    <div class="input-container">
+      
+      <input id="todo-input" class="inputs" type="text" placeholder="Todo Name">
+      <input class="inputs" type="text" placeholder="Todo Urgency">
+      <input id="input-button" class="input-button" type="button" value="Add Todo"
+       onclick="grabInput()">
+      
+    </div>
+
+    <hr>
+
+    <div id="todo-container" class="todo-container">
+        
+    </div>
+
+    <script src="scripts/todo-script.js"></script>
+  </body>
+</html>
