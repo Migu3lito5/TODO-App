@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title> Todo App </title>
+    <title> Daily Tasks </title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Indie+Flower&family=Source+Sans+Pro&display=swap" rel="stylesheet">
@@ -14,20 +14,20 @@
   <body>
     <div class="header">
       <div class="header-mid">
-        <h2>--|- Plan of Attack -|--</h2>
+        <h2> -[ Plan of Attack ]- </h2>
       </div>
     </div>
 
     <div class="input-container">
       
-      <input id="todo-input" class="inputs" type="text" placeholder="Todo Name">
+      <input id="todo-input" class="inputs" type="text" placeholder="Todo: ">
       <select id="urgency" class="urgency">
-        <option value="1">Urgent</option>
-        <option value="2">Ehhhh</option>
-        <option value="3">Tomorrow</option>
+        <option value="1">Crucial</option>
+        <option value="2">Important</option>
+        <option value="3">Ehhh..</option>
       </select>
-      <button id="input-button" class="input-button" onclick="grabInput()"> Add TODO </button>
-      <button id="sort-button" class="sort-button" onclick="sortTodosByPriority()"> Sort TODOs </button>
+      <button id="input-button" class="input-button" onclick="grabInput()"> Add </button>
+      <button id="sort-button" class="sort-button" onclick="sortTodosByPriority()"> Sort </button>
 
 
     </div>
@@ -39,7 +39,12 @@
   
     </div>
     
+
+    <div class="footer">
+      <p class="footer-content"> &copy; Miguel Angel Francisco, All Rights Reserved.</p>
+    </div>
   
     <script src="scripts/todo-script.js"></script>
   </body>
 </html>
+
