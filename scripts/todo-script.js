@@ -1,9 +1,19 @@
-let todoList = []
+let todoList;
+const todoInLocal = JSON.parse(localStorage.getItem('todoList'))
+
+if(Array.isArray(todoInLocal)) {
+   todoList = todoInLocal;
+} else {
+   todoList = [];
+}
+
+
 
 // adds the todo to the array and starts the displayTodo function
 const addTodo = (todo,urgency) => {
 
    todoList.push({todoDesc: todo, priority: urgency, date: Date()})
+   updateTodos()
    displayTodos()
    
 }
@@ -21,6 +31,8 @@ const deleteTodo = () => {
       return true;
   });
 
+
+  updateTodos()
   displayTodos()
   
 }
@@ -55,7 +67,8 @@ const sortTodosByPriority = () => {
      todoList.sort(function(x,y){
       return x.priority - y.priority;
    });
-
+   
+   updateTodos();
    displayTodos();
 }
 
@@ -63,12 +76,11 @@ const assignColor = (todoRow, i) => {
 
    if (i.priority == 1) 
       todoRow.style.backgroundColor = 'rgb(' + 207 + ',' + 162 + ',' + 157 + ')';
-   else if (i.priority == 2){
+   else if (i.priority == 2)
       todoRow.style.backgroundColor = 'rgb(' + 170 + ',' + 207 + ',' + 157 + ')';
-   }
-   else {
+   else 
       todoRow.style.backgroundColor = 'rgb(' + 157 + ',' + 189 + ',' + 207 + ')';
-   }
+   
 
 }
 
@@ -78,7 +90,7 @@ const assignClassNames = (todoRow, todoDesc, todoButton, i) => {
    todoDesc.classList.add('todo-desc')
    todoButton.classList.add('todo-button')
    todoButton.setAttribute('onClick', 'deleteTodo()')
-   todoButton.innerText = 'X'
+   todoButton.innerText = 'x';
    todoButton.setAttribute('id', i.date)
 
 }
@@ -91,6 +103,12 @@ const grabInput = () => {
    let urgentValue = urgentType.options[urgentType.selectedIndex].value;
 
    addTodo(inputValue, urgentValue);
+   
+
+}
+
+const updateTodos = () => {
+   localStorage.setItem('todoList', JSON.stringify(todoList))
 }
 
 displayTodos()
