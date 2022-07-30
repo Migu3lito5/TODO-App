@@ -3,9 +3,10 @@
     flex-direction: row;
     justify-content: center;
     flex: 1fr;
-    background-color: rgb(214, 210, 158);
-    
-    
+    background: rgb(218,206,162);
+    background: linear-gradient(90deg, rgba(218,206,162,1) 35%, rgba(208,180,108,1) 72%);
+    box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+   
 }
 
 .header-mid h2 {
